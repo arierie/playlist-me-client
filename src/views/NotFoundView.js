@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { createScope, map, transformProxies } from './helpers'
-import PlaylistFormView from './PlaylistFormView'
 
 const scripts = [
   { loading: fetch("https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=61c84fb60c499caa357c038b").then(body => body.text()), isAsync: false },
@@ -11,19 +10,19 @@ const scripts = [
 
 let Controller
 
-class IndexView extends React.Component {
+class NotFoundView extends React.Component {
   static get Controller() {
     if (Controller) return Controller
 
     try {
-      Controller = require('../controllers/IndexController')
+      Controller = require('../controllers/NotFoundController')
       Controller = Controller.default || Controller
 
       return Controller
     }
     catch (e) {
       if (e.code == 'MODULE_NOT_FOUND') {
-        Controller = IndexView
+        Controller = NotFoundView
 
         return Controller
       }
@@ -34,7 +33,7 @@ class IndexView extends React.Component {
 
   componentDidMount() {
     const htmlEl = document.querySelector('html')
-    htmlEl.dataset['wfPage'] = '61c84fb60c499c87ec7c038c'
+    htmlEl.dataset['wfPage'] = '61c8783498f6045a13764fc4'
     htmlEl.dataset['wfSite'] = '61c84fb60c499caa357c038b'
 
     scripts.concat(null).reduce((active, next) => Promise.resolve(active).then((active) => {
@@ -53,7 +52,7 @@ class IndexView extends React.Component {
   }
 
   render() {
-    const proxies = IndexView.Controller !== IndexView ? transformProxies(this.props.children) : {
+    const proxies = NotFoundView.Controller !== NotFoundView ? transformProxies(this.props.children) : {
 
     }
 
@@ -65,15 +64,13 @@ class IndexView extends React.Component {
           @import url(/css/playlistme.webflow.css);
         ` }} />
         <span className="af-view">
-          <div className="af-class-body">
-            <div className="af-class-div-block w-clearfix">
-              <a href="#" className="af-class-btnwalletconnection w-button">Connect my wallet</a>
+          <div>
+            <div className="af-class-utility-page-wrap">
+              <div className="af-class-utility-page-content"><img src="https://d3e54v103j8qbb.cloudfront.net/static/page-not-found.211a85e40c.svg" alt width={64} className="af-class-image" />
+                <h2>Page Not Found</h2>
+                <div>The page you are looking for doesn't exist or has been moved</div>
+              </div>
             </div>
-            <div className="af-class-headsection af-class-wf-section">
-              <h1 className="af-class-headtitle">PlaylistMe 🎧</h1>
-              <div className="af-class-headdesc">A simple app to share your playlist to beautiful people around Web3 ecosystem. No judging, discrimination, whatsoever, we respect every genre. <br /><br />How to start? just connect your Ethereum wallet and start sharing!</div>
-            </div>
-            <PlaylistFormView.Controller />
             {/* [if lte IE 9]><![endif] */}
           </div>
         </span>
@@ -82,6 +79,6 @@ class IndexView extends React.Component {
   }
 }
 
-export default IndexView
+export default NotFoundView
 
 /* eslint-enable */

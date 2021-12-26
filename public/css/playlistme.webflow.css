@@ -74,11 +74,6 @@
   background-image: none;
 }
 
-body {
-  background-color: #fff4ee;
-  background-image: none;
-}
-
 .af-view .af-class-form-block {
   margin-top: 48px;
   margin-right: 24%;
@@ -106,12 +101,14 @@ body {
 }
 
 .af-view .af-class-labellink {
+  margin-left: 4px;
   font-family: Montserrat, sans-serif;
   color: #5a5590;
   font-weight: 700;
 }
 
 .af-view .af-class-labeldesc {
+  margin-left: 4px;
   font-family: Montserrat, sans-serif;
   color: #5a5590;
   font-weight: 700;
@@ -123,10 +120,74 @@ body {
 }
 
 .af-view .af-class-labelsubtitlelink {
+  margin-left: 4px;
   font-family: Montserrat, sans-serif;
   color: #5a5590;
   font-size: 12px;
   font-weight: 400;
+}
+
+.af-view .af-class-utility-page-wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  max-height: 100%;
+  max-width: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.af-view .af-class-utility-page-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 260px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.af-view .af-class-utility-page-form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.af-view .af-class-image {
+  position: static;
+  display: block;
+  clear: none;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 auto;
+  -ms-flex: 0 auto;
+  flex: 0 auto;
 }
 
 @media screen and (max-width: 991px) {

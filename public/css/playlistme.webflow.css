@@ -1,3 +1,9 @@
+.af-view {
+  background-color: #f0e3dc;
+  font-family: Montserrat, sans-serif;
+  line-height: 20px;
+}
+
 .af-view .af-class-headtitle {
   margin-top: 0%;
   margin-right: 0%;
@@ -64,14 +70,9 @@
 }
 
 .af-view .af-class-div-block {
-  margin-top: 24px;
+  margin-top: 36px;
   margin-right: 24%;
   margin-left: 24%;
-}
-
-.af-view .af-class-body {
-  background-color: #fff4ee;
-  background-image: none;
 }
 
 .af-view .af-class-form-block {

@@ -1,6 +1,8 @@
 import React from 'react';
 import IndexView from '../views/IndexView'
 
-export default () => (
+const Index = ()=>(
     <IndexView />
-)
+);
+
+export default Index;

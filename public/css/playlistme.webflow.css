@@ -4,7 +4,7 @@
   margin-left: 0%;
   border: 1px solid transparent;
   font-family: 'PT Serif', serif;
-  color: #4a467c;
+  color: #5a5590;
   font-size: 40px;
 }
 
@@ -101,7 +101,7 @@
 .af-view .af-class-labellink {
   margin-left: 4px;
   font-family: Montserrat, sans-serif;
-  color: #52504e;
+  color: #5a5590;
   font-weight: 700;
 }
 
@@ -109,7 +109,7 @@
   margin-top: 16px;
   margin-left: 4px;
   font-family: Montserrat, sans-serif;
-  color: #52504e;
+  color: #5a5590;
   font-weight: 700;
 }
 
@@ -121,7 +121,7 @@
 .af-view .af-class-labelsubtitlelink {
   margin-left: 4px;
   font-family: Montserrat, sans-serif;
-  color: #52504e;
+  color: #5a5590;
   font-size: 12px;
   font-weight: 400;
 }

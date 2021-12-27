@@ -61,6 +61,10 @@
   object-fit: fill;
 }
 
+.af-view .af-class-btnwalletconnection:hover {
+  background-color: #403d68;
+}
+
 .af-view .af-class-container {
   display: block;
 }
@@ -96,6 +100,10 @@
   font-size: 14px;
   font-weight: 500;
   text-align: center;
+}
+
+.af-view .af-class-btnsend:hover {
+  background-color: #403d68;
 }
 
 .af-view .af-class-labellink {

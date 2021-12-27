@@ -1,14 +1,11 @@
-.af-view {
-  background-color: #f0e3dc;
-}
-
 .af-view .af-class-headtitle {
   margin-top: 0%;
   margin-right: 0%;
   margin-left: 0%;
   border: 1px solid transparent;
   font-family: 'PT Serif', serif;
-  color: #5a5590;
+  color: #4a467c;
+  font-size: 40px;
 }
 
 .af-view .af-class-headdesc {
@@ -104,7 +101,7 @@
 .af-view .af-class-labellink {
   margin-left: 4px;
   font-family: Montserrat, sans-serif;
-  color: #5a5590;
+  color: #52504e;
   font-weight: 700;
 }
 
@@ -112,7 +109,7 @@
   margin-top: 16px;
   margin-left: 4px;
   font-family: Montserrat, sans-serif;
-  color: #5a5590;
+  color: #52504e;
   font-weight: 700;
 }
 
@@ -124,7 +121,7 @@
 .af-view .af-class-labelsubtitlelink {
   margin-left: 4px;
   font-family: Montserrat, sans-serif;
-  color: #5a5590;
+  color: #52504e;
   font-size: 12px;
   font-weight: 400;
 }

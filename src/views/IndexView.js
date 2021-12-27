@@ -71,7 +71,7 @@ class IndexView extends React.Component {
             </div>
             <div className="af-class-headsection af-class-wf-section">
               <h1 className="af-class-headtitle">PlaylistMe 🎧</h1>
-              <div className="af-class-headdesc">A simple app to share your playlist to beautiful people around <strong>Web3</strong> ecosystem. No judging, discrimination, whatsoever, we respect every genre. <br /><br />How to start? just connect your <strong>Ethereum</strong> wallet and start sharing!</div>
+              <div className="af-class-headdesc">A simple app to share your playlist to beautiful people around <strong>Web3</strong> ecosystem. No judging, discriminating, whatsoever, we respect every genre. <br /><br />How to start? just connect your <strong>Ethereum</strong> wallet and start sharing!</div>
             </div>
             <PlaylistFormView.Controller />
             {/* [if lte IE 9]><![endif] */}

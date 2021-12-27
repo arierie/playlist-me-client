@@ -50,7 +50,9 @@ class PlaylistFormView extends React.Component {
 
   render() {
     const proxies = PlaylistFormView.Controller !== PlaylistFormView ? transformProxies(this.props.children) : {
-
+      'tf-link': [],
+      'tf-desc': [],
+      'btn-send': [],
     }
 
     return (
@@ -62,7 +64,7 @@ class PlaylistFormView extends React.Component {
         ` }} />
         <span className="af-view">
           <div className="af-class-form-block w-form">
-            <form id="wf-form-Playlist" name="wf-form-Playlist" data-name="Playlist" method="get"><label htmlFor="URL" className="af-class-labellink">Link to your awesome playlist</label><label htmlFor="URL" className="af-class-labelsubtitlelink">Supported:&nbsp;Audius, Spotify, SoundCloud, Deezer, TIDAL, or Joox</label><input type="text" className="af-class-tflink w-input" maxLength={256} name="URL" data-name="URL" placeholder id="URL" required /><label htmlFor="Description" className="af-class-labeldesc">Tell us about why we should listen to this</label><input type="text" className="af-class-tfdesc w-input" maxLength={256} name="Description" data-name="Description" placeholder id="Description" required /><input type="submit" defaultValue="Send" data-wait="Please wait..." className="af-class-btnsend w-button" /></form>
+            <form id="wf-form-Playlist" name="wf-form-Playlist" data-name="Playlist" method="get"><label htmlFor="URL" className="af-class-labellink">Link to your awesome playlist</label><label htmlFor="URL" className="af-class-labelsubtitlelink">Supported:&nbsp;Audius, Spotify, SoundCloud, Deezer, TIDAL, or Joox</label>{map(proxies['tf-link'], props => <input type="text" maxLength={256} name="URL" data-name="URL" placeholder id="URL" required {...{...props, className: `af-class-tflink w-input ${props.className || ''}`}}>{props.children}</input>)}<label htmlFor="Description" className="af-class-labeldesc">Tell us about why we should listen to this</label>{map(proxies['tf-desc'], props => <input type="text" maxLength={256} name="Description" data-name="Description" placeholder id="Description" required {...{...props, className: `af-class-tfdesc w-input ${props.className || ''}`}}>{props.children}</input>)}{map(proxies['btn-send'], props => <input type="submit" value="Send" data-wait="Please wait..." {...{...props, className: `af-class-btnsend w-button ${props.className || ''}`}}>{props.children}</input>)}</form>
             <div className="af-class-success-message w-form-done">
               <div>Thank you for sharing your playlist,<br />You're really a champ! 🤟</div>
             </div>

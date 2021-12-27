@@ -54,7 +54,7 @@ class IndexView extends React.Component {
 
   render() {
     const proxies = IndexView.Controller !== IndexView ? transformProxies(this.props.children) : {
-
+      'btn-connect': [],
     }
 
     return (
@@ -67,7 +67,7 @@ class IndexView extends React.Component {
         <span className="af-view">
           <div className="af-class-body">
             <div className="af-class-div-block w-clearfix">
-              <a href="#" className="af-class-btnwalletconnection w-button">Connect my wallet</a>
+              {map(proxies['btn-connect'], props => <a href="#" {...{...props, className: `af-class-btnwalletconnection w-button ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>Connect my wallet</React.Fragment>}</a>)}
             </div>
             <div className="af-class-headsection af-class-wf-section">
               <h1 className="af-class-headtitle">PlaylistMe 🎧</h1>

@@ -111,7 +111,7 @@
 }
 
 .af-view .af-class-labellink {
-  margin-left: 4px;
+  margin-left: 0px;
   font-family: Montserrat, sans-serif;
   color: #5a5590;
   font-size: 14px;
@@ -120,7 +120,7 @@
 
 .af-view .af-class-labeldesc {
   margin-top: 16px;
-  margin-left: 4px;
+  margin-left: 0px;
   font-family: Montserrat, sans-serif;
   color: #5a5590;
   font-size: 14px;
@@ -133,7 +133,7 @@
 }
 
 .af-view .af-class-labelsubtitlelink {
-  margin-left: 4px;
+  margin-left: 0px;
   font-family: Montserrat, sans-serif;
   color: #5a5590;
   font-size: 12px;

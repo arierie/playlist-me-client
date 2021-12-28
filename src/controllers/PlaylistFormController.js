@@ -37,20 +37,19 @@ const PlaylistFormController = () => {
             const signer = provider.getSigner();
             const playlistMeContract = new ethers.Contract(contractAddress, contractABI, signer);
     
-            // let count = await playlistMeContract.getTotalPlaylists();
-            // console.log("Retrieved total shared playlist count...", count.toNumber());
+            let count = await playlistMeContract.getTotalPlaylists();
+            console.log("Retrieved total shared playlist count...", count.toNumber());
             
-            // const waveTxn = await playlistMeContract.sendPlaylist(link, desc);
-            // console.log("Mining...", waveTxn.hash);
+            const waveTxn = await playlistMeContract.sendPlaylist(link, desc);
+            console.log("Mining...", waveTxn.hash);
   
-            // await waveTxn.wait();
-            // console.log("Mined -- ", waveTxn.hash);
+            await waveTxn.wait();
+            console.log("Mined -- ", waveTxn.hash);
   
-            // count = await playlistMeContract.getTotalPlaylists();
-            // console.log("Retrieved total shared playlist count...", count.toNumber());
-            // setEtherLink("https://rinkeby.etherscan.io/tx/" + waveTxn.hash);
-            // const minedHash = waveTxn.hash + "".substring(0, 10) + "...";
-            // setHashMined(minedHash);
+            count = await playlistMeContract.getTotalPlaylists();
+            console.log("Retrieved total shared playlist count...", count.toNumber());
+            setEtherLink("https://rinkeby.etherscan.io/tx/" + waveTxn.hash);
+            setHashMined(waveTxn.hash);
             
             setInputFormVisible("none");
             setErrorFormVisible("none");
@@ -73,7 +72,9 @@ const PlaylistFormController = () => {
                 <btn-send onClick={sendPlaylist}/>
             </form-input>
             <form-success style={{display: isSuccessFormVisible}}>
-                <btn-hash>{etherLink}</btn-hash>
+                <btn-hash onClick={() => {
+                    window.open(etherLink, "_blank");
+                }}>{ hashMined.substring(0, 24) + "..." }</btn-hash>
                 <btn-dismiss onClick={() => {
                     setSuccessFormVisible("none");
                     setInputFormVisible("block");

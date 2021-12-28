@@ -54,6 +54,7 @@ class PlaylistFormView extends React.Component {
       'tf-link': [],
       'tf-desc': [],
       'btn-send': [],
+      'form-loading': [],
       'form-success': [],
       'btn-hash': [],
       'btn-dismiss': [],
@@ -73,6 +74,11 @@ class PlaylistFormView extends React.Component {
             {map(proxies['form-input'], props => <form id="wf-form-Playlist" name="wf-form-Playlist" data-name="Playlist" method="get" {...props}>{createScope(props.children, proxies => <React.Fragment><label htmlFor="URL" className="af-class-labellink">Link to your awesome playlist</label><label htmlFor="URL" className="af-class-labelsubtitlelink">Supported:&nbsp;Audius, Spotify, SoundCloud, Deezer, TIDAL, or Joox</label>{map(proxies['tf-link'], props => <input type="text" maxLength={256} name="URL" data-name="URL" placeholder id="URL" required {...{...props, className: `af-class-tflink w-input ${props.className || ''}`}}>{props.children}</input>)}<label htmlFor="Description" className="af-class-labeldesc">Tell us about why we should listen to this</label>{map(proxies['tf-desc'], props => <input type="text" maxLength={256} name="Description" data-name="Description" placeholder id="Description" required {...{...props, className: `af-class-tfdesc w-input ${props.className || ''}`}}>{props.children}</input>)}
               {map(proxies['btn-send'], props => <a href="#" {...{...props, className: `af-class-btnsendplaylist w-button ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>Share playlist</React.Fragment>}</a>)}
             </React.Fragment>)}</form>)}
+            {map(proxies['form-loading'], props => <div {...{...props, className: `af-class-loading ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>
+              <div className="af-class-textloadingtitle">Ok, now let's wait a little</div>
+              <div className="af-class-textloadingdesc"> Your playlist is currently being mined...</div>
+              <div data-w-id="5fbeb774-98fb-b77e-6ed1-dfcfc041d512" data-animation-type="lottie" data-src="documents/loading_animation.json" data-loop={1} data-direction={1} data-autoplay={1} data-is-ix2-target={0} data-renderer="svg" data-default-duration="1.35" data-duration={0} className="af-class-lottie-animation" />
+            </React.Fragment>}</div>)}
             {map(proxies['form-success'], props => <div {...{...props, className: `af-class-success-message w-form-done ${props.className || ''}`}}>{createScope(props.children, proxies => <React.Fragment>
               <div className="af-class-labelthankyoutitle">Thank you for sharing your playlist!<br /></div>
               <div className="af-class-labelthankyousubtitle">Here's the transaction Hash:</div>

@@ -1,3 +1,7 @@
+.af-view {
+  background-color: #fff4ee;
+}
+
 .af-view .af-class-headtitle {
   margin-top: 0%;
   margin-right: 0%;
@@ -350,6 +354,32 @@
 .af-view .af-class-error-message {
   padding-right: 16px;
   padding-left: 16px;
+}
+
+.af-view .af-class-loading {
+  margin-top: 16px;
+  padding: 16px;
+}
+
+.af-view .af-class-textloadingtitle {
+  margin-top: 0px;
+  font-family: 'PT Serif', serif;
+  color: #5a5590;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.af-view .af-class-textloadingdesc {
+  -webkit-transition: opacity 300ms cubic-bezier(.25, .1, 0, .82);
+  transition: opacity 300ms cubic-bezier(.25, .1, 0, .82);
+  font-family: Montserrat, sans-serif;
+  color: #5a5590;
+  text-align: center;
+}
+
+.af-view .af-class-lottie-animation {
+  height: 128px;
 }
 
 @media screen and (max-width: 991px) {

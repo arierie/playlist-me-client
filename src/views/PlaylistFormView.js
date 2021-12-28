@@ -79,8 +79,8 @@ class PlaylistFormView extends React.Component {
               <div className="af-class-labelthankyoucaption">You're really a champ! 🤟<br />Do you want to share more?</div>
               {map(proxies['btn-dismiss'], props => <a href="#" {...{...props, className: `af-class-btndismisssuccess w-button ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>Yeah, sounds good</React.Fragment>}</a>)}
             </React.Fragment>)}</div>)}
-            {map(proxies['form-error'], props => <div {...{...props, className: `w-form-fail ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>
-              <div>Oops! Something went wrong while sending your playlist.</div>
+            {map(proxies['form-error'], props => <div {...{...props, className: `af-class-error-message w-form-fail ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>
+              <div className="af-class-texterror">Oops! Something went wrong while sending your playlist.</div>
             </React.Fragment>}</div>)}
           </div>
         </span>

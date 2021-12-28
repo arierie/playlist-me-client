@@ -341,6 +341,17 @@
   margin-top: 17px;
 }
 
+.af-view .af-class-texterror {
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+.af-view .af-class-error-message {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
 @media screen and (max-width: 991px) {
   .af-view .af-class-btnsend {
     font-size: 14px;

@@ -9,8 +9,18 @@ const PlaylistFormController = () => {
 
     const [link, setLink] = useState("");
     const [desc, setDesc] = useState("");
+    const [hashMined, setHashMined] = useState("");
+    const [etherLink, setEtherLink] = useState("");
+    const [isInputFormVisible, setInputFormVisible] = useState("block");
+    const [isSuccessFormVisible, setSuccessFormVisible] = useState("none");
+    const [isErrorFormVisible, setErrorFormVisible] = useState("none");
 
     const sendPlaylist = async () => {
+        if(link == null || link == "" || desc == null || desc == "") {
+            setErrorFormVisible("block");
+            return;
+        }
+
         try {
           const { ethereum } = window;
     
@@ -19,8 +29,8 @@ const PlaylistFormController = () => {
             const signer = provider.getSigner();
             const playlistMeContract = new ethers.Contract(contractAddress, contractABI, signer);
     
-            let count = await playlistMeContract.getTotalPlaylists();
-            console.log("Retrieved total shared playlist count...", count.toNumber());
+            // let count = await playlistMeContract.getTotalPlaylists();
+            // console.log("Retrieved total shared playlist count...", count.toNumber());
             
             // const waveTxn = await playlistMeContract.sendPlaylist(link, desc);
             // console.log("Mining...", waveTxn.hash);
@@ -30,20 +40,37 @@ const PlaylistFormController = () => {
   
             // count = await playlistMeContract.getTotalPlaylists();
             // console.log("Retrieved total shared playlist count...", count.toNumber());
-  
+            // setEtherLink("https://rinkeby.etherscan.io/tx/" + waveTxn.hash);
+            // const minedHash = waveTxn.hash + "".substring(0, 10) + "...";
+            // setHashMined(minedHash);
+            
+            setInputFormVisible("none");
+            setSuccessFormVisible("block");
           } else {
-            console.log("Ethereum object doesn't exist!");
+              setErrorFormVisible("block");
+              console.log("Ethereum object doesn't exist!");
           }
         } catch (error) {
-          console.log(error)
+            setErrorFormVisible("block");
+            console.log("Transaction error: " + error)
         }
       }
     
       return (
         <PlaylistFormView>
-            <tf-link onChange={event => setLink(event.target.value)} placeholder="https://.."/>
-            <tf-desc onChange={event => setDesc(event.target.value)} placeholder="Eg: This playlist is cool"/>
-            <btn-send onClick={sendPlaylist}/>
+            <form-input style={{display: isInputFormVisible}}>
+                <tf-link onChange={event => setLink(event.target.value) } placeholder="https://.."/>
+                <tf-desc onChange={event => setDesc(event.target.value) } placeholder="Eg: This playlist is cool"/>
+                <btn-send onClick={sendPlaylist}/>
+            </form-input>
+            <form-success style={{display: isSuccessFormVisible}}>
+                <btn-hash>{etherLink}</btn-hash>
+                <btn-dismiss onClick={() => {
+                    setSuccessFormVisible("none");
+                    setInputFormVisible("block");
+                }}/>
+            </form-success>
+            <form-error style={{display: isErrorFormVisible}}/>
         </PlaylistFormView>
       );
 }

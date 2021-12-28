@@ -67,7 +67,7 @@ class IndexView extends React.Component {
         <span className="af-view">
           <div className="af-class-body">
             <div className="af-class-div-block w-clearfix">
-              {map(proxies['btn-connect'], props => <a href="#" {...{...props, className: `af-class-btnwalletconnection w-button ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>Connect my wallet</React.Fragment>}</a>)}
+              {map(proxies['btn-connect'], props => <a href="#" {...{...props, className: `af-class-btnwalletconnect w-button ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>Connect my wallet</React.Fragment>}</a>)}
             </div>
             <div className="af-class-headsection af-class-wf-section">
               <h1 className="af-class-headtitle">PlaylistMe 🎧</h1>

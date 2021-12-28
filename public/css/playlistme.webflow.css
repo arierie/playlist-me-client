@@ -16,6 +16,7 @@
   color: #52504e;
   font-size: 14px;
   line-height: 24px;
+  font-weight: 400;
 }
 
 .af-view .af-class-headsection {
@@ -24,7 +25,7 @@
   margin-left: 24%;
 }
 
-.af-view .af-class-btnwalletconnection {
+.af-view .af-class-btnwalletconnect {
   position: static;
   left: auto;
   top: 0%;
@@ -64,7 +65,7 @@
   object-fit: fill;
 }
 
-.af-view .af-class-btnwalletconnection:hover {
+.af-view .af-class-btnwalletconnect:hover {
   background-color: #403d68;
 }
 
@@ -76,6 +77,10 @@
   margin-top: 36px;
   margin-right: 24%;
   margin-left: 24%;
+}
+
+.af-view .af-class-body {
+  padding-top: 0px;
 }
 
 .af-view .af-class-form-block {
@@ -203,6 +208,137 @@
   flex: 0 auto;
 }
 
+.af-view .af-class-text-block {
+  margin-top: 16px;
+  margin-right: 24%;
+  margin-left: 24%;
+  font-family: Montserrat, sans-serif;
+  color: #52504e;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.af-view .af-class-btndismisssuccess {
+  position: static;
+  left: auto;
+  top: 0%;
+  right: 0%;
+  bottom: auto;
+  display: inline-block;
+  overflow: visible;
+  height: auto;
+  margin: 16px 0% 8px;
+  float: none;
+  clear: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid #52504e;
+  border-radius: 24px;
+  background-color: #fff4ee;
+  font-family: Montserrat, sans-serif;
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  -o-object-fit: fill;
+  object-fit: fill;
+}
+
+.af-view .af-class-btndismisssuccess:hover {
+  background-color: #c5bab4;
+  color: #242322;
+}
+
+.af-view .af-class-labelthankyoucaption {
+  margin-top: 16px;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+}
+
+.af-view .af-class-labelthankyoutitle {
+  margin-top: 8px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+}
+
+.af-view .af-class-labelthankyousubtitle {
+  margin-top: 8px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 300;
+}
+
+.af-view .af-class-btnhash {
+  display: inline-block;
+  margin-top: 8px;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: 8px 16px;
+  border-radius: 16px;
+  background-color: #44406e;
+}
+
+.af-view .af-class-btnhash:hover {
+  background-color: #343153;
+}
+
+.af-view .af-class-btnsendplaylist {
+  position: static;
+  left: auto;
+  top: 0%;
+  right: 0%;
+  bottom: auto;
+  display: inline-block;
+  overflow: visible;
+  width: 100%;
+  height: auto;
+  margin-top: 24px;
+  margin-right: 0%;
+  margin-left: 0%;
+  float: none;
+  clear: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 24px;
+  background-color: #5a5590;
+  font-family: Montserrat, sans-serif;
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  -o-object-fit: fill;
+  object-fit: fill;
+}
+
+.af-view .af-class-btnsendplaylist:hover {
+  background-color: #403d68;
+}
+
 @media screen and (max-width: 991px) {
   .af-view .af-class-btnsend {
     font-size: 14px;
@@ -219,7 +355,7 @@
     line-height: 20px;
   }
 
-  .af-view .af-class-btnwalletconnection {
+  .af-view .af-class-btnwalletconnect {
     height: 36px;
     font-size: 12px;
   }
@@ -239,6 +375,16 @@
 
   .af-view .af-class-labelsubtitlelink {
     font-size: 10px;
+  }
+
+  .af-view .af-class-btndismisssuccess {
+    height: 36px;
+    font-size: 12px;
+  }
+
+  .af-view .af-class-btnsendplaylist {
+    height: 36px;
+    font-size: 12px;
   }
 }
 
@@ -265,5 +411,21 @@
 
   .af-view .af-class-btnsend {
     margin-top: 16px;
+  }
+
+  .af-view .af-class-labelthankyoucaption {
+    font-size: 10px;
+  }
+
+  .af-view .af-class-labelthankyoutitle {
+    font-size: 14px;
+  }
+
+  .af-view .af-class-labelthankyousubtitle {
+    font-size: 10px;
+  }
+
+  .af-view .af-class-btnhash {
+    text-align: center;
   }
 }

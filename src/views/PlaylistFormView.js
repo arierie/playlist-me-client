@@ -53,6 +53,10 @@ class PlaylistFormView extends React.Component {
       'tf-link': [],
       'tf-desc': [],
       'btn-send': [],
+      'form-success': [],
+      'btn-hash': [],
+      'btn-dismiss': [],
+      'form-error': [],
     }
 
     return (
@@ -64,13 +68,19 @@ class PlaylistFormView extends React.Component {
         ` }} />
         <span className="af-view">
           <div className="af-class-form-block w-form">
-            <form id="wf-form-Playlist" name="wf-form-Playlist" data-name="Playlist" method="get"><label htmlFor="URL" className="af-class-labellink">Link to your awesome playlist</label><label htmlFor="URL" className="af-class-labelsubtitlelink">Supported:&nbsp;Audius, Spotify, SoundCloud, Deezer, TIDAL, or Joox</label>{map(proxies['tf-link'], props => <input type="text" maxLength={256} name="URL" data-name="URL" placeholder id="URL" required {...{...props, className: `af-class-tflink w-input ${props.className || ''}`}}>{props.children}</input>)}<label htmlFor="Description" className="af-class-labeldesc">Tell us about why we should listen to this</label>{map(proxies['tf-desc'], props => <input type="text" maxLength={256} name="Description" data-name="Description" placeholder id="Description" required {...{...props, className: `af-class-tfdesc w-input ${props.className || ''}`}}>{props.children}</input>)}{map(proxies['btn-send'], props => <input type="submit" value="Send" data-wait="Please wait..." {...{...props, className: `af-class-btnsend w-button ${props.className || ''}`}}>{props.children}</input>)}</form>
-            <div className="af-class-success-message w-form-done">
-              <div>Thank you for sharing your playlist,<br />You're really a champ! 🤟</div>
-            </div>
-            <div className="w-form-fail">
+            <form id="wf-form-Playlist" name="wf-form-Playlist" data-name="Playlist" method="get"><label htmlFor="URL" className="af-class-labellink">Link to your awesome playlist</label><label htmlFor="URL" className="af-class-labelsubtitlelink">Supported:&nbsp;Audius, Spotify, SoundCloud, Deezer, TIDAL, or Joox</label>{map(proxies['tf-link'], props => <input type="text" maxLength={256} name="URL" data-name="URL" placeholder id="URL" required {...{...props, className: `af-class-tflink w-input ${props.className || ''}`}}>{props.children}</input>)}<label htmlFor="Description" className="af-class-labeldesc">Tell us about why we should listen to this</label>{map(proxies['tf-desc'], props => <input type="text" maxLength={256} name="Description" data-name="Description" placeholder id="Description" required {...{...props, className: `af-class-tfdesc w-input ${props.className || ''}`}}>{props.children}</input>)}
+              {map(proxies['btn-send'], props => <a href="#" {...{...props, className: `af-class-btnsendplaylist w-button ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>Share playlist</React.Fragment>}</a>)}
+            </form>
+            {map(proxies['form-success'], props => <div {...{...props, className: `af-class-success-message w-form-done ${props.className || ''}`}}>{createScope(props.children, proxies => <React.Fragment>
+              <div className="af-class-labelthankyoutitle">Thank you for sharing your playlist!<br /></div>
+              <div className="af-class-labelthankyousubtitle">Here's the transaction Hash:</div>
+              {map(proxies['btn-hash'], props => <div {...{...props, className: `af-class-btnhash ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>0xc3e52ab5...</React.Fragment>}</div>)}
+              <div className="af-class-labelthankyoucaption">You're really a champ! 🤟<br />Do you want to share more?</div>
+              {map(proxies['btn-dismiss'], props => <a href="#" {...{...props, className: `af-class-btndismisssuccess w-button ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>Yeah, sounds good</React.Fragment>}</a>)}
+            </React.Fragment>)}</div>)}
+            {map(proxies['form-error'], props => <div {...{...props, className: `w-form-fail ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>
               <div>Oops! Something went wrong while sending your playlist.</div>
-            </div>
+            </React.Fragment>}</div>)}
           </div>
         </span>
       </span>

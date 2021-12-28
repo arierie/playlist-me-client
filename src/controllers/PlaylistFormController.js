@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ethers } from "ethers";
 import abi from '../utils/PlaylistMe.json'
 import PlaylistFormView from '../views/PlaylistFormView'
@@ -17,13 +17,13 @@ const PlaylistFormController = () => {
     const [isErrorFormVisible, setErrorFormVisible] = useState("none");
 
     const sendPlaylist = async () => {
-        if(link == null || link == "") {
+        if(link == null || link === "") {
             setErrorFormVisible("block");
             setError("Please input link as it is required!");
             return;
         }
 
-        if(desc == null || desc == "") {
+        if(desc == null || desc === "") {
             setErrorFormVisible("block");
             setError("Please input description as it is required!");
             return;

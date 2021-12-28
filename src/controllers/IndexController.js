@@ -68,7 +68,7 @@ const IndexController = () => {
   return (
         <IndexView>
             <btn-connect onClick={connectWallet}>
-                { currentAccount != "" ? currentAccount.substring(0, 10) + "..." : "Connect my wallet" }
+                { currentAccount !== "" ? currentAccount.substring(0, 10) + "..." : "Connect my wallet" }
             </btn-connect>
         </IndexView>
     );

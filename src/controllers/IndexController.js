@@ -50,12 +50,6 @@ const IndexController = () => {
       console.log(error)
     }
   }
-
-  const disconnectWallet = async() => {
-      // TODO implement disconnect
-      //   await web3Modal.clearCachedProvider();
-      //   setCurrentAccount("");
-  }
   
   const listenToWalletConnectionStatus = () => {
     window.ethereum.on("accountsChanged", accounts => {
@@ -68,26 +62,6 @@ const IndexController = () => {
         }
       });
     }
-    
-    const onMouseEnter = () => {
-        if(currentAccount != "") {
-            setBtnConnectText("Disconnect");
-        }
-    }
-    
-    const onMouseLeave = () => {
-        if(currentAccount != "") {
-            setBtnConnectText("Connected");
-        }
-    }
-
-    const handleCta = () => {
-        if (currentAccount != "") {
-            // TODO implement disconnect
-        } else {
-            connectWallet();
-        }
-    }
   
   useEffect(() => {
     checkIfWalletIsConnected();
@@ -96,8 +70,8 @@ const IndexController = () => {
     
   return (
         <IndexView>
-            <btn-connect onClick={handleCta} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} >
-                {btnConnectText}
+            <btn-connect onClick={connectWallet}>
+                {currentAccount.substring(0, 10) + "..."}
             </btn-connect>
         </IndexView>
     );

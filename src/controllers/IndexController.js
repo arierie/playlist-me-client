@@ -4,7 +4,6 @@ import IndexView from '../views/IndexView'
 const IndexController = () => {
 
  const [currentAccount, setCurrentAccount] = useState("");
- const [btnConnectText, setBtnConnectText] = useState("");
 
  const checkIfWalletIsConnected = async () => {
     try {
@@ -55,10 +54,8 @@ const IndexController = () => {
     window.ethereum.on("accountsChanged", accounts => {
         if (accounts.length > 0) {
             setCurrentAccount(accounts[0]);
-            setBtnConnectText("Connected");
         } else {
             setCurrentAccount("");
-            setBtnConnectText("Connect my wallet");
         }
       });
     }
@@ -71,7 +68,7 @@ const IndexController = () => {
   return (
         <IndexView>
             <btn-connect onClick={connectWallet}>
-                {currentAccount.substring(0, 10) + "..."}
+                { currentAccount != "" ? currentAccount.substring(0, 10) + "..." : "Connect my wallet" }
             </btn-connect>
         </IndexView>
     );

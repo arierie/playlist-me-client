@@ -13,6 +13,7 @@ const PlaylistFormController = () => {
     const [etherLink, setEtherLink] = useState("");
     const [error, setError] = useState("");
     const [isInputFormVisible, setInputFormVisible] = useState("block");
+    const [isLoadingFormVisible, setLoadingFormVisible] = useState("none");
     const [isSuccessFormVisible, setSuccessFormVisible] = useState("none");
     const [isErrorFormVisible, setErrorFormVisible] = useState("none");
 
@@ -40,6 +41,9 @@ const PlaylistFormController = () => {
             let count = await playlistMeContract.getTotalPlaylists();
             console.log("Retrieved total shared playlist count...", count.toNumber());
             
+            setInputFormVisible("none");
+            setErrorFormVisible("none");
+            setLoadingFormVisible("block");
             const waveTxn = await playlistMeContract.sendPlaylist(link, desc);
             console.log("Mining...", waveTxn.hash);
   
@@ -52,6 +56,7 @@ const PlaylistFormController = () => {
             setHashMined(waveTxn.hash);
             
             setInputFormVisible("none");
+            setLoadingFormVisible("none");
             setErrorFormVisible("none");
             setSuccessFormVisible("block");
           } else {
@@ -71,6 +76,7 @@ const PlaylistFormController = () => {
                 <tf-desc onChange={event => setDesc(event.target.value) } placeholder="Eg: This playlist is cool"/>
                 <btn-send onClick={sendPlaylist}/>
             </form-input>
+            <form-loading style={{display: isLoadingFormVisible}}/>
             <form-success style={{display: isSuccessFormVisible}}>
                 <btn-hash onClick={() => {
                     window.open(etherLink, "_blank");

@@ -60,10 +60,14 @@ const PlaylistFormController = () => {
             setErrorFormVisible("none");
             setSuccessFormVisible("block");
           } else {
-              setErrorFormVisible("block");
-              console.log("Ethereum object doesn't exist!");
+            setLoadingFormVisible("none");
+            setInputFormVisible("block");
+            setErrorFormVisible("block");
+            console.log("Ethereum object doesn't exist!");
           }
         } catch (error) {
+            setLoadingFormVisible("none");
+            setInputFormVisible("block");
             setErrorFormVisible("block");
             console.log("Transaction error: " + error)
         }

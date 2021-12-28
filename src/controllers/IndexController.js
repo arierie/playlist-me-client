@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import IndexView from '../views/IndexView'
 
-const IndexController = () => {
 
+const IndexController = () => {
  const [currentAccount, setCurrentAccount] = useState("");
 
  const checkIfWalletIsConnected = async () => {

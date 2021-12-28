@@ -11,13 +11,21 @@ const PlaylistFormController = () => {
     const [desc, setDesc] = useState("");
     const [hashMined, setHashMined] = useState("");
     const [etherLink, setEtherLink] = useState("");
+    const [error, setError] = useState("");
     const [isInputFormVisible, setInputFormVisible] = useState("block");
     const [isSuccessFormVisible, setSuccessFormVisible] = useState("none");
     const [isErrorFormVisible, setErrorFormVisible] = useState("none");
 
     const sendPlaylist = async () => {
-        if(link == null || link == "" || desc == null || desc == "") {
+        if(link == null || link == "") {
             setErrorFormVisible("block");
+            setError("Please input link as it is required!");
+            return;
+        }
+
+        if(desc == null || desc == "") {
+            setErrorFormVisible("block");
+            setError("Please input description as it is required!");
             return;
         }
 
@@ -45,6 +53,7 @@ const PlaylistFormController = () => {
             // setHashMined(minedHash);
             
             setInputFormVisible("none");
+            setErrorFormVisible("none");
             setSuccessFormVisible("block");
           } else {
               setErrorFormVisible("block");
@@ -70,7 +79,9 @@ const PlaylistFormController = () => {
                     setInputFormVisible("block");
                 }}/>
             </form-success>
-            <form-error style={{display: isErrorFormVisible}}/>
+            <form-error style={{display: isErrorFormVisible}}>
+                <text-error>{error}</text-error>
+            </form-error>
         </PlaylistFormView>
       );
 }

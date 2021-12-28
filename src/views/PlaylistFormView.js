@@ -50,6 +50,7 @@ class PlaylistFormView extends React.Component {
 
   render() {
     const proxies = PlaylistFormView.Controller !== PlaylistFormView ? transformProxies(this.props.children) : {
+      'form-input': [],
       'tf-link': [],
       'tf-desc': [],
       'btn-send': [],
@@ -68,9 +69,9 @@ class PlaylistFormView extends React.Component {
         ` }} />
         <span className="af-view">
           <div className="af-class-form-block w-form">
-            <form id="wf-form-Playlist" name="wf-form-Playlist" data-name="Playlist" method="get"><label htmlFor="URL" className="af-class-labellink">Link to your awesome playlist</label><label htmlFor="URL" className="af-class-labelsubtitlelink">Supported:&nbsp;Audius, Spotify, SoundCloud, Deezer, TIDAL, or Joox</label>{map(proxies['tf-link'], props => <input type="text" maxLength={256} name="URL" data-name="URL" placeholder id="URL" required {...{...props, className: `af-class-tflink w-input ${props.className || ''}`}}>{props.children}</input>)}<label htmlFor="Description" className="af-class-labeldesc">Tell us about why we should listen to this</label>{map(proxies['tf-desc'], props => <input type="text" maxLength={256} name="Description" data-name="Description" placeholder id="Description" required {...{...props, className: `af-class-tfdesc w-input ${props.className || ''}`}}>{props.children}</input>)}
+            {map(proxies['form-input'], props => <form id="wf-form-Playlist" name="wf-form-Playlist" data-name="Playlist" method="get" {...props}>{createScope(props.children, proxies => <React.Fragment><label htmlFor="URL" className="af-class-labellink">Link to your awesome playlist</label><label htmlFor="URL" className="af-class-labelsubtitlelink">Supported:&nbsp;Audius, Spotify, SoundCloud, Deezer, TIDAL, or Joox</label>{map(proxies['tf-link'], props => <input type="text" maxLength={256} name="URL" data-name="URL" placeholder id="URL" required {...{...props, className: `af-class-tflink w-input ${props.className || ''}`}}>{props.children}</input>)}<label htmlFor="Description" className="af-class-labeldesc">Tell us about why we should listen to this</label>{map(proxies['tf-desc'], props => <input type="text" maxLength={256} name="Description" data-name="Description" placeholder id="Description" required {...{...props, className: `af-class-tfdesc w-input ${props.className || ''}`}}>{props.children}</input>)}
               {map(proxies['btn-send'], props => <a href="#" {...{...props, className: `af-class-btnsendplaylist w-button ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>Share playlist</React.Fragment>}</a>)}
-            </form>
+            </React.Fragment>)}</form>)}
             {map(proxies['form-success'], props => <div {...{...props, className: `af-class-success-message w-form-done ${props.className || ''}`}}>{createScope(props.children, proxies => <React.Fragment>
               <div className="af-class-labelthankyoutitle">Thank you for sharing your playlist!<br /></div>
               <div className="af-class-labelthankyousubtitle">Here's the transaction Hash:</div>

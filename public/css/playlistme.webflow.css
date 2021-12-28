@@ -79,10 +79,6 @@
   margin-left: 24%;
 }
 
-.af-view .af-class-body {
-  padding-top: 0px;
-}
-
 .af-view .af-class-form-block {
   margin-top: 48px;
   margin-right: 24%;
@@ -133,6 +129,7 @@
 }
 
 .af-view .af-class-success-message {
+  border-radius: 16px;
   background-color: #5a5590;
   color: #fff;
 }
@@ -288,6 +285,7 @@
   padding: 8px 16px;
   border-radius: 16px;
   background-color: #44406e;
+  cursor: pointer;
 }
 
 .af-view .af-class-btnhash:hover {
@@ -337,6 +335,10 @@
 
 .af-view .af-class-btnsendplaylist:hover {
   background-color: #403d68;
+}
+
+.af-view .af-class-text-block-2 {
+  margin-top: 17px;
 }
 
 @media screen and (max-width: 991px) {

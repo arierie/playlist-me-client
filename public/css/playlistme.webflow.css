@@ -135,6 +135,7 @@
 .af-view .af-class-success-message {
   border-radius: 16px;
   background-color: #5a5590;
+  box-shadow: 11px 11px 6px -3px #4e4c66;
   color: #fff;
 }
 
@@ -382,9 +383,78 @@
   height: 128px;
 }
 
+.af-view .af-class-list {
+  margin: 0px 24%;
+  padding: 24px 16px;
+}
+
+.af-view .af-class-textitemsender {
+  margin-top: 24px;
+  font-family: Montserrat, sans-serif;
+  color: #5a5590;
+  text-align: left;
+}
+
+.af-view .af-class-textitemlink {
+  margin-top: 24px;
+  padding: 8px 16px;
+  border-radius: 16px;
+  background-color: #5a5590;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 300;
+  text-align: center;
+  cursor: pointer;
+}
+
+.af-view .af-class-text-block-5 {
+  color: #fff;
+}
+
+.af-view .af-class-textitemdesc {
+  margin-top: 8px;
+  margin-bottom: 0px;
+  border-left-color: #5a5590;
+  font-family: Montserrat, sans-serif;
+  color: #5a5590;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.af-view .af-class-textitemsendername {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.af-view .af-class-textitemsenderdate {
+  font-weight: 600;
+}
+
+.af-view .af-class-listitem {
+  padding: 24px;
+  border-radius: 16px;
+  background-color: #fce9dc;
+  box-shadow: 10px 10px 7px -5px #af9786;
+}
+
+.af-view .af-class-labellist {
+  margin: 36px 24% 0px;
+  font-family: Montserrat, sans-serif;
+  color: #5a5590;
+  font-size: 24px;
+  font-weight: 500;
+}
+
 @media screen and (max-width: 991px) {
   .af-view .af-class-btnsend {
     font-size: 14px;
+  }
+
+  .af-view .af-class-labellist {
+    margin-right: 24%;
+    margin-left: 24%;
   }
 }
 

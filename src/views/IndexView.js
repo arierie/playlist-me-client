@@ -55,6 +55,12 @@ class IndexView extends React.Component {
   render() {
     const proxies = IndexView.Controller !== IndexView ? transformProxies(this.props.children) : {
       'btn-connect': [],
+      'text-playlist-count': [],
+      'text-item-desc': [],
+      'text-item-sender': [],
+      'text-item-sender-name': [],
+      'text-item-sender-date': [],
+      'text-item-link': [],
     }
 
     return (
@@ -74,6 +80,14 @@ class IndexView extends React.Component {
               <div className="af-class-headdesc">A simple app to share your playlist to beautiful people around <strong>Web3</strong> ecosystem. No judging, discriminating, whatsoever, we respect every genre. <br /><br />How to start? just connect your <strong>Ethereum</strong> wallet and start sharing!</div>
             </div>
             <PlaylistFormView.Controller />
+            <h1 className="af-class-labellist">{map(proxies['text-playlist-count'], props => <strong {...{...props, className: `af-class-textplaylistcount ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>250</React.Fragment>}</strong>)} people have shared their playlist</h1>
+            <ul role="list" className="af-class-list w-list-unstyled">
+              <li className="af-class-listitem">
+                {map(proxies['text-item-desc'], props => <blockquote {...{...props, className: `af-class-textitemdesc ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>Here's mine, check out!</React.Fragment>}</blockquote>)}
+                {map(proxies['text-item-sender'], props => <div {...{...props, className: `af-class-textitemsender ${props.className || ''}`}}>{createScope(props.children, proxies => <React.Fragment>Sent by {map(proxies['text-item-sender-name'], props => <strong {...{...props, className: `af-class-textitemsendername ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>0xc3e52ab5</React.Fragment>}</strong>)}... on {map(proxies['text-item-sender-date'], props => <strong {...{...props, className: `af-class-textitemsenderdate ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>Monday, 13th August 2020</React.Fragment>}</strong>)}</React.Fragment>)}</div>)}
+                {map(proxies['text-item-link'], props => <div {...{...props, className: `af-class-textitemlink ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>https://open.spotify.com/playlist/5upqHrG0QoDmPsL5sFfHHf?si=1ff97715b21541aa</React.Fragment>}</div>)}
+              </li>
+            </ul>
             {/* [if lte IE 9]><![endif] */}
           </div>
         </span>

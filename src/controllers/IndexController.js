@@ -66,7 +66,7 @@ const IndexController = () => {
       });
     }
 
-  const getAllPlaylist = async () => {
+  const loadAllPlaylist = async () => {
       try {
         const { ethereum } = window;
         if (ethereum) {
@@ -102,7 +102,7 @@ const IndexController = () => {
   useEffect(() => {
     checkIfWalletIsConnected();
     listenToWalletConnectionStatus();
-    getAllPlaylist();
+    loadAllPlaylist();
   }, [])
     
   return (

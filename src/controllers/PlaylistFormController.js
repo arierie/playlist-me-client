@@ -4,9 +4,9 @@ import abi from '../utils/PlaylistMe.json'
 import PlaylistFormView from '../views/PlaylistFormView'
 
 const PlaylistFormController = () => {
-    const contractAddress = "0xf5542B250744173F5d7907974353d86DaCB34f4b";
+    const contractAddress = "0x10A5F1f8D95BBCDe4DB7E01159F6133146676d19";
     const contractABI = abi.abi;
-
+    
     const [link, setLink] = useState("");
     const [desc, setDesc] = useState("");
     const [hashMined, setHashMined] = useState("");

@@ -56,6 +56,7 @@ class IndexView extends React.Component {
     const proxies = IndexView.Controller !== IndexView ? transformProxies(this.props.children) : {
       'btn-connect': [],
       'text-playlist-count': [],
+      'list-item': [],
       'text-item-desc': [],
       'text-item-sender': [],
       'text-item-sender-name': [],
@@ -82,11 +83,11 @@ class IndexView extends React.Component {
             <PlaylistFormView.Controller />
             <h1 className="af-class-labellist">{map(proxies['text-playlist-count'], props => <strong {...{...props, className: `af-class-textplaylistcount ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>250</React.Fragment>}</strong>)} people have shared their playlist</h1>
             <ul role="list" className="af-class-list w-list-unstyled">
-              <li className="af-class-listitem">
+              {map(proxies['list-item'], props => <li {...{...props, className: `af-class-listitem ${props.className || ''}`}}>{createScope(props.children, proxies => <React.Fragment>
                 {map(proxies['text-item-desc'], props => <blockquote {...{...props, className: `af-class-textitemdesc ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>Here's mine, check out!</React.Fragment>}</blockquote>)}
                 {map(proxies['text-item-sender'], props => <div {...{...props, className: `af-class-textitemsender ${props.className || ''}`}}>{createScope(props.children, proxies => <React.Fragment>Sent by {map(proxies['text-item-sender-name'], props => <strong {...{...props, className: `af-class-textitemsendername ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>0xc3e52ab5</React.Fragment>}</strong>)}... on {map(proxies['text-item-sender-date'], props => <strong {...{...props, className: `af-class-textitemsenderdate ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>Monday, 13th August 2020</React.Fragment>}</strong>)}</React.Fragment>)}</div>)}
                 {map(proxies['text-item-link'], props => <div {...{...props, className: `af-class-textitemlink ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>https://open.spotify.com/playlist/5upqHrG0QoDmPsL5sFfHHf?si=1ff97715b21541aa</React.Fragment>}</div>)}
-              </li>
+              </React.Fragment>)}</li>)}
             </ul>
             {/* [if lte IE 9]><![endif] */}
           </div>

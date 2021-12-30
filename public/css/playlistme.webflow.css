@@ -383,7 +383,7 @@
   height: 128px;
 }
 
-.af-view .af-class-list {
+.af-view .af-class-listplaylist {
   margin: 0px 24%;
   padding: 24px 16px;
 }
@@ -432,7 +432,7 @@
   font-weight: 600;
 }
 
-.af-view .af-class-listitem {
+.af-view .af-class-listplaylistitem {
   padding: 24px;
   border-radius: 16px;
   background-color: #fce9dc;
@@ -445,6 +445,16 @@
   color: #5a5590;
   font-size: 24px;
   font-weight: 500;
+}
+
+.af-view .af-class-itemcontainer {
+  margin-top: 16px;
+  margin-right: 24%;
+  margin-left: 24%;
+  padding: 24px;
+  border-radius: 16px;
+  background-color: #fce9dc;
+  box-shadow: 10px 10px 7px -5px #af9786;
 }
 
 @media screen and (max-width: 991px) {

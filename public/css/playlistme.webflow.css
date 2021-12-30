@@ -83,6 +83,11 @@
   margin-left: 24%;
 }
 
+.af-view .af-class-body {
+  overflow: auto;
+  height: 1080px;
+}
+
 .af-view .af-class-form-block {
   margin-top: 48px;
   margin-right: 24%;
